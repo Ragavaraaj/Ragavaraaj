@@ -31,16 +31,13 @@ jobs:
           # Fetch all history for all branches and tags
           fetch-depth: 0
 
-      - name: Change directory to site
-        run: cd site
-
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
 
       - name: Install dependencies
-        run: npm install
+        run: cd site && npm install
 
       - name: Setup Pages
         id: setup_pages
@@ -58,14 +55,14 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - name: Build with Next.js
-        run: npm run build
+        run: cd site && npm run build
         env:
           PAGES_BASE_PATH: ${{ steps.setup_pages.outputs.base_path }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./site/out
 
   deploy:
     environment:
