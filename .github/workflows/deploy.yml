@@ -25,11 +25,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch all history for all branches and tags
+          fetch-depth: 0
+
       - name: Change directory to site
         run: cd site
-
-      - name: Checkout
-        uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
         name: Install pnpm
