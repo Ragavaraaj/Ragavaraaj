@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ragavaraaj Dhurairaj - Full Stack Developer Resume</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.4;
+        color: #333;
+        background: white;
+        font-size: 11px;
+      }
+
+      .resume-container {
+        max-width: 8.5in;
+        margin: 0 auto;
+        background: white;
+        padding: 0.5in;
+        min-height: 11in;
+      }
+
+      /* Header Section */
+      .header {
+        text-align: center;
+        border-bottom: 2px solid #2563eb;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+      }
+
+      .name {
+        font-size: 28px;
+        font-weight: bold;
+        color: #1e40af;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+      }
+
+      .title {
+        font-size: 16px;
+        color: #4b5563;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 10px;
+        color: #6b7280;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+
+      /* Section Headers */
+      .section {
+        margin-bottom: 18px;
+      }
+
+      .section-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #1e40af;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 3px;
+        margin-bottom: 10px;
+      }
+
+      /* Professional Summary */
+      .summary-text {
+        text-align: justify;
+        line-height: 1.5;
+        color: #374151;
+      }
+
+      /* Skills Section */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .skill-category {
+        margin-bottom: 8px;
+      }
+
+      .skill-category-title {
+        font-weight: bold;
+        color: #1f2937;
+        font-size: 11px;
+        margin-bottom: 3px;
+      }
+
+      .skill-list {
+        color: #4b5563;
+        font-size: 10px;
+        line-height: 1.4;
+      }
+
+      /* Experience Section */
+      .job {
+        margin-bottom: 15px;
+        page-break-inside: avoid;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 5px;
+      }
+
+      .job-title {
+        font-weight: bold;
+        color: #1f2937;
+        font-size: 12px;
+      }
+
+      .company {
+        color: #2563eb;
+        font-weight: 600;
+        font-size: 11px;
+      }
+
+      .job-meta {
+        text-align: right;
+        color: #6b7280;
+        font-size: 10px;
+      }
+
+      .job-description {
+        margin-bottom: 8px;
+      }
+
+      .job-description ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .job-description li {
+        margin-bottom: 3px;
+        padding-left: 12px;
+        position: relative;
+        font-size: 10px;
+        line-height: 1.4;
+      }
+
+      .job-description li::before {
+        content: "•";
+        color: #2563eb;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Projects */
+      .project {
+        margin-bottom: 12px;
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 3px;
+      }
+
+      .project-title {
+        font-weight: bold;
+        color: #1f2937;
+        font-size: 11px;
+      }
+
+      .project-tech {
+        color: #6b7280;
+        font-size: 9px;
+        font-style: italic;
+      }
+
+      .project-description {
+        font-size: 10px;
+        color: #4b5563;
+        line-height: 1.4;
+      }
+
+      /* Key Projects */
+      .key-project {
+        margin-bottom: 10px;
+        margin-left: 15px;
+      }
+
+      .key-project-title {
+        font-weight: bold;
+        color: #059669;
+        font-size: 11px;
+        margin-bottom: 2px;
+      }
+
+      .key-project-description ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .key-project-description li {
+        font-size: 9px;
+        margin-bottom: 2px;
+        padding-left: 10px;
+        position: relative;
+        line-height: 1.3;
+      }
+
+      .key-project-description li::before {
+        content: "▸";
+        color: #059669;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Education */
+      .education-item {
+        margin-bottom: 6px;
+      }
+
+      .degree {
+        font-weight: bold;
+        color: #1f2937;
+        font-size: 11px;
+      }
+
+      .school {
+        color: #2563eb;
+        font-size: 10px;
+      }
+
+      .graduation-year {
+        color: #6b7280;
+        font-size: 10px;
+      }
+
+      /* Achievements */
+      .achievements ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .achievements li {
+        margin-bottom: 3px;
+        padding-left: 12px;
+        position: relative;
+        font-size: 10px;
+        line-height: 1.4;
+      }
+
+      .achievements li::before {
+        content: "★";
+        color: #f59e0b;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Core Competencies - Keyword Optimized */
+      .competencies {
+        font-size: 10px;
+        line-height: 1.6;
+        color: #374151;
+        text-align: justify;
+      }
+
+      /* Print Styles */
+      @media print {
+        body {
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+
+        .resume-container {
+          margin: 0;
+          padding: 0.3in;
+          box-shadow: none;
+        }
+
+        .section {
+          page-break-inside: avoid;
+        }
+
+        .job,
+        .project {
+          page-break-inside: avoid;
+        }
+      }
+
+      /* Print button */
+      .print-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .print-button:hover {
+        background: #1d4ed8;
+      }
+
+      @media print {
+        .print-button {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="print-button" onclick="window.print()">
+      Print/Save as PDF
+    </button>
+
+    <div class="resume-container">
+      <!-- Header -->
+      <div class="header">
+        <div class="name">RAGAVARAAJ DHURAIRAJ</div>
+        <div class="title">Senior Full Stack Developer</div>
+        <div class="contact-info">
+          <div class="contact-item">📧 ragavaraaj.official@gmail.com</div>
+          <div class="contact-item">📱 +91-8939-002-148</div>
+          <div class="contact-item">📍 Chennai, Tamil Nadu, India</div>
+          <div class="contact-item">🔗 linkedin.com/in/ragavaraaj</div>
+          <div class="contact-item">💻 github.com/ragavaraaj</div>
+        </div>
+      </div>
+
+      <!-- Professional Summary -->
+      <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary-text">
+          Results-driven Senior Full Stack Developer with extensive experience
+          building enterprise-grade applications. Led technical transformation
+          initiatives improving performance and achieving cost savings through
+          AWS cloud migration. Expert in React.js/Node.js ecosystems with proven
+          ability to scale development teams while maintaining high application
+          uptime. Specialized in converting complex business requirements into
+          scalable technical solutions using microservices architecture.
+        </div>
+      </div>
+
+      <!-- Core Competencies -->
+      <div class="section">
+        <div class="section-title">Core Competencies</div>
+        <div class="competencies">
+          Full Stack Development • MERN Stack • Web Development • Software
+          Development Life Cycle (SDLC) • Agile Development • Scrum Methodology
+          • JavaScript • React.js • Node.js • RESTful APIs • Microservices
+          Architecture • Cloud Computing • AWS • Database Management • Version
+          Control • Git • CI/CD • DevOps • Cross-functional Collaboration •
+          Performance Optimization • Test-Driven Development • Application
+          Development
+        </div>
+      </div>
+
+      <!-- Technical Expertise -->
+      <div class="section">
+        <div class="section-title">Technical Expertise</div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-category-title">
+              Full Stack Development (6+ Years)
+            </div>
+            <div class="skill-list">
+              Frontend: React.js, Next.js, TypeScript, Redux, HTML5/CSS3,
+              Tailwind CSS, Material UI<br />
+              Backend: Node.js, Express.js, Nest.js, RESTful APIs, GraphQL,
+              Microservices Architecture<br />
+              Databases: PostgreSQL, MongoDB, Redis, DynamoDB
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-category-title">Cloud & DevOps (4+ Years)</div>
+            <div class="skill-list">
+              AWS Services: EC2, Lambda, API Gateway, S3, CloudFront, RDS,
+              Fargate<br />
+              Containerization: Docker, Kubernetes, Infrastructure as Code<br />
+              CI/CD: Jenkins, GitHub Actions, AWS CodePipeline
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Experience -->
+      <div class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Senior Full Stack Developer</div>
+              <div class="company">Qburst Technologies</div>
+            </div>
+            <div class="job-meta">
+              Chennai, India<br />
+              Nov 2021 - Present
+            </div>
+          </div>
+          <div class="job-description">
+            <ul>
+              <li>
+                Architect and develop scalable full-stack applications using
+                React.js, Node.js, and cloud technologies for 100K+ daily active
+                users
+              </li>
+              <li>
+                Lead cross-functional teams and mentor 5+ junior developers
+                while establishing coding standards and best practices
+              </li>
+              <li>
+                Collaborate with product managers, designers, and DevOps
+                engineers in Agile Development environment
+              </li>
+              <li>
+                Implement CI/CD pipelines reducing deployment time by 60% and
+                improving software development life cycle efficiency
+              </li>
+            </ul>
+          </div>
+
+          <!-- Key Projects -->
+          <div class="key-project">
+            <div class="key-project-title">
+              WWJ Corp. Software Engineering Platform | Oct 2024 - Present
+            </div>
+            <div class="key-project-description">
+              <ul>
+                <li>
+                  Developed high-performance marketing website using Next.js 15,
+                  TypeScript, and Tailwind CSS
+                </li>
+                <li>
+                  Implemented SEO optimization strategies resulting in 35%
+                  increase in organic traffic
+                </li>
+                <li>
+                  Reduced page load time from 4.2s to 1.8s, improving user
+                  engagement by 45%
+                </li>
+                <li>
+                  Technologies: <strong>Next.js</strong>,
+                  <strong>TypeScript</strong>, <strong>Tailwind CSS</strong>,
+                  <strong>AWS</strong>, <strong>Google Analytics</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="key-project">
+            <div class="key-project-title">
+              WHILL Mobility Services Platform | Apr 2022 - Sep 2024
+            </div>
+            <div class="key-project-description">
+              <ul>
+                <li>
+                  Architected microservices-based backend for IoT mobility
+                  vehicle management using MERN Stack principles
+                </li>
+                <li>
+                  Built RESTful APIs using Nest.js handling 10K+ concurrent
+                  requests with 99.9% uptime
+                </li>
+                <li>
+                  Reduced infrastructure costs by 35% through optimized AWS
+                  Lambda implementations
+                </li>
+                <li>
+                  Technologies: <strong>Nest.js</strong>,
+                  <strong>PostgreSQL</strong>, <strong>AWS</strong>,
+                  <strong>Docker</strong>, <strong>Redis</strong>,
+                  <strong>Microservices Architecture</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="key-project">
+            <div class="key-project-title">
+              WeWork Website Maintenance & Enhancement | Jan 2024 - Apr 2024
+            </div>
+            <div class="key-project-description">
+              <ul>
+                <li>
+                  Maintained and enhanced WordPress-based marketing site using
+                  full stack development skills
+                </li>
+                <li>
+                  Optimized site performance achieving 90+ Lighthouse scores
+                  through web development best practices
+                </li>
+                <li>
+                  Enhanced user experience leading to 25% increase in average
+                  session duration
+                </li>
+                <li>
+                  Technologies: <strong>WordPress</strong>,
+                  <strong>jQuery</strong>, <strong>CSS3</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="key-project">
+            <div class="key-project-title">
+              Prechex UI Component Library | Mar 2022 - Apr 2022
+            </div>
+            <div class="key-project-description">
+              <ul>
+                <li>
+                  Created comprehensive React.js component library for
+                  enterprise SPA application
+                </li>
+                <li>
+                  Developed responsive components supporting mobile-first design
+                  principles
+                </li>
+                <li>
+                  Implemented automated testing suite with 95% code coverage
+                </li>
+                <li>
+                  Technologies: <strong>React.js</strong>,
+                  <strong>TypeScript</strong>,
+                  <strong>Styled Components</strong>, <strong>Jest</strong>,
+                  <strong>React Testing Library</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="key-project">
+            <div class="key-project-title">
+              Enterprise ChatBot Platform | 2023 - Present
+            </div>
+            <div class="key-project-description">
+              <ul>
+                <li>
+                  Designed and implemented AI-powered chatbot for customer
+                  interactions
+                </li>
+                <li>
+                  Enhanced customer support through intelligent query resolution
+                </li>
+                <li>
+                  Technologies: <strong>React.js</strong>,
+                  <strong>Dialogflow</strong>, <strong>Node.js</strong>,
+                  <strong>WebSocket</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">React Developer</div>
+              <div class="company">Tata Consultancy Services (TCS)</div>
+            </div>
+            <div class="job-meta">
+              Chennai, India<br />
+              Jul 2019 - Nov 2021
+            </div>
+          </div>
+          <div class="job-description">
+            <ul>
+              <li>
+                Developed responsive web applications using React.js following
+                software development life cycle methodologies
+              </li>
+              <li>
+                Established coding standards and reusable component architecture
+                for application development
+              </li>
+              <li>
+                Participated in Agile Development processes and sprint planning
+                with cross-functional collaboration
+              </li>
+              <li>
+                Conducted code reviews and knowledge sharing sessions using
+                version control systems
+              </li>
+            </ul>
+          </div>
+
+          <div class="key-project">
+            <div class="key-project-title">
+              Resources Maintenance Mobile App | Oct 2020 - Nov 2021
+            </div>
+            <div class="key-project-description">
+              <ul>
+                <li>
+                  Built web application for field technicians using React and
+                  full stack development principles
+                </li>
+                <li>
+                  Implemented offline-first architecture with local database
+                  management and data synchronization
+                </li>
+                <li>
+                  Reduced field technician response time by 60% and decreased
+                  manual reporting errors by 80%
+                </li>
+                <li>
+                  Technologies: <strong>React Native</strong>,
+                  <strong>Redux</strong>, <strong>SQLite</strong>,
+                  <strong>REST APIs</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="key-project">
+            <div class="key-project-title">
+              Mobile Plan Management App | Aug 2019 - Oct 2020
+            </div>
+            <div class="key-project-description">
+              <ul>
+                <li>
+                  Developed native iOS application for 50K+ active users using
+                  application development best practices
+                </li>
+                <li>
+                  Created innovative floating bubble UI for chatbot integration
+                </li>
+                <li>
+                  Optimized app performance through database management and
+                  caching strategies
+                </li>
+                <li>
+                  Technologies: <strong>Swift</strong>, <strong>UIKit</strong>,
+                  <strong>Core Data</strong>, <strong>RESTful APIs</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hobby Projects -->
+      <div class="section">
+        <div class="section-title">Hobby Projects</div>
+
+        <div class="project">
+          <div class="project-header">
+            <div class="project-title">
+              Morpho CMS - Content Management System
+            </div>
+            <div class="project-tech">
+              <strong>Next.js</strong>, <strong>TypeScript</strong>,
+              <strong>MongoDB</strong> | 2024
+            </div>
+          </div>
+          <div class="project-description">
+            Developing modern CMS using Next.js and TypeScript with role-based
+            access control and content management features. Building with
+            MongoDB for data persistence and Docker for development environment.
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <div class="project-title">Pi Frame - Digital Photo Frame</div>
+            <div class="project-tech">
+              <strong>Go</strong>, <strong>Linux</strong>,
+              <strong>Raspberry Pi</strong> | 2024
+            </div>
+          </div>
+          <div class="project-description">
+            Created simple photo frame application for Raspberry Pi Zero with
+            direct framebuffer rendering. Built lightweight Go application for
+            embedded system deployment.
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <div class="project-title">DIY Photo Frame GUI Application</div>
+            <div class="project-tech">Go, Gioui | 2023</div>
+          </div>
+          <div class="project-description">
+            Developed desktop version of photo frame with windowing system
+            support. Alternative implementation that works with windowing
+            servers instead of direct framebuffer using Gioui framework.
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Achievements -->
+      <div class="section">
+        <div class="section-title">Key Achievements</div>
+        <div class="achievements">
+          <ul>
+            <li>
+              Led successful migration of legacy system serving 100K+ users with
+              zero downtime
+            </li>
+            <li>
+              Reduced application bundle size by 45% through code splitting and
+              optimization techniques
+            </li>
+            <li>
+              Established development standards adopted by engineering teams
+              (10+ developers)
+            </li>
+            <li>
+              Mentored 5 junior developers with 100% retention rate and 2
+              promotions achieved
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section-title">Education & Qualifications</div>
+        <div class="education-item">
+          <div class="degree">Master of Technology - Computational Science</div>
+          <div class="school">SRM University, Chennai</div>
+          <div class="graduation-year">2024</div>
+        </div>
+        <div class="education-item">
+          <div class="degree">Bachelor of Engineering - Computer Science</div>
+          <div class="school">Gojan School of Business and Technology</div>
+          <div class="graduation-year">2019</div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="section">
+        <div class="section-title">Languages</div>
+        <div style="font-size: 10px; color: #4b5563">
+          <strong>English</strong> - Professional Working Proficiency •
+          <strong>Tamil</strong> - Native Proficiency
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
